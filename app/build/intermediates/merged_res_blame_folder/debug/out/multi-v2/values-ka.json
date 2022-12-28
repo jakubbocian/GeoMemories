@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.geomemories.app-mergeDebugResources-34:/values-ka/values-ka.xml",
+            "outputFile": "com.example.geomemories.app-mergeDebugResources-38:/values-ka/values-ka.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\87a796fe63836d99a2198ac6a6284cb3\\transformed\\core-1.8.0\\res\\values-ka\\values-ka.xml",
@@ -18,23 +18,6 @@
                         "startOffsets": "7888",
                         "endColumns": "100",
                         "endOffsets": "7984"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\c9e1a58b01f16e272a86f5ce7452796b\\transformed\\navigation-ui-2.4.1\\res\\values-ka\\values-ka.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,164",
-                        "endColumns": "108,117",
-                        "endOffsets": "159,277"
-                    },
-                    "to": {
-                        "startLines": "89,90",
-                        "startColumns": "4,4",
-                        "startOffsets": "7499,7608",
-                        "endColumns": "108,117",
-                        "endOffsets": "7603,7721"
                     }
                 },
                 {
@@ -71,6 +54,23 @@
                         "endLines": "5,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,91",
                         "endColumns": "12,83,98,124,87,66,96,68,62,86,65,59,68,60,53,114,58,59,53,71,129,87,83,137,77,75,93,55,53,65,72,77,85,72,77,77,74,89,74,93,97,73,76,99,52,67,88,88,61,64,62,106,97,99,98,59,57,79",
                         "endOffsets": "318,3105,3204,3329,3417,3484,3581,3650,3713,3800,3866,3926,3995,4056,4110,4225,4284,4344,4398,4470,4600,4688,4772,4910,4988,5064,5158,5214,5268,5334,5407,5485,5571,5644,5722,5800,5875,5965,6040,6134,6232,6306,6383,6483,6536,6604,6693,6782,6844,6909,6972,7079,7177,7277,7376,7436,7494,7801"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\88442b52181f3fa4317809c14ce9014b\\transformed\\navigation-ui-2.5.3\\res\\values-ka\\values-ka.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,164",
+                        "endColumns": "108,117",
+                        "endOffsets": "159,277"
+                    },
+                    "to": {
+                        "startLines": "89,90",
+                        "startColumns": "4,4",
+                        "startOffsets": "7499,7608",
+                        "endColumns": "108,117",
+                        "endOffsets": "7603,7721"
                     }
                 }
             ]

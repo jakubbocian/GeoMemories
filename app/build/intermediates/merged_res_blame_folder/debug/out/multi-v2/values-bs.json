@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.geomemories.app-mergeDebugResources-34:/values-bs/values-bs.xml",
+            "outputFile": "com.example.geomemories.app-mergeDebugResources-38:/values-bs/values-bs.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\87a796fe63836d99a2198ac6a6284cb3\\transformed\\core-1.8.0\\res\\values-bs\\values-bs.xml",
@@ -57,7 +57,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\c9e1a58b01f16e272a86f5ce7452796b\\transformed\\navigation-ui-2.4.1\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\88442b52181f3fa4317809c14ce9014b\\transformed\\navigation-ui-2.5.3\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

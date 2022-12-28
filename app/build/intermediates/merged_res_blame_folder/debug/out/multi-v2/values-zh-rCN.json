@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.geomemories.app-mergeDebugResources-34:/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "com.example.geomemories.app-mergeDebugResources-38:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\459731560744495d36c7572f4eaf1462\\transformed\\material-1.7.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
@@ -23,23 +23,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\c9e1a58b01f16e272a86f5ce7452796b\\transformed\\navigation-ui-2.4.1\\res\\values-zh-rCN\\values-zh-rCN.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,156",
-                        "endColumns": "100,102",
-                        "endOffsets": "151,254"
-                    },
-                    "to": {
-                        "startLines": "89,90",
-                        "startColumns": "4,4",
-                        "startOffsets": "6739,6840",
-                        "endColumns": "100,102",
-                        "endOffsets": "6835,6938"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\87a796fe63836d99a2198ac6a6284cb3\\transformed\\core-1.8.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2",
@@ -54,6 +37,23 @@
                         "startOffsets": "7091",
                         "endColumns": "100",
                         "endOffsets": "7187"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\88442b52181f3fa4317809c14ce9014b\\transformed\\navigation-ui-2.5.3\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,156",
+                        "endColumns": "100,102",
+                        "endOffsets": "151,254"
+                    },
+                    "to": {
+                        "startLines": "89,90",
+                        "startColumns": "4,4",
+                        "startOffsets": "6739,6840",
+                        "endColumns": "100,102",
+                        "endOffsets": "6835,6938"
                     }
                 },
                 {

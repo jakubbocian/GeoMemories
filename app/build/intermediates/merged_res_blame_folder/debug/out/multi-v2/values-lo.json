@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.geomemories.app-mergeDebugResources-34:/values-lo/values-lo.xml",
+            "outputFile": "com.example.geomemories.app-mergeDebugResources-38:/values-lo/values-lo.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\88442b52181f3fa4317809c14ce9014b\\transformed\\navigation-ui-2.5.3\\res\\values-lo\\values-lo.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,164",
+                        "endColumns": "108,109",
+                        "endOffsets": "159,269"
+                    },
+                    "to": {
+                        "startLines": "89,90",
+                        "startColumns": "4,4",
+                        "startOffsets": "7340,7449",
+                        "endColumns": "108,109",
+                        "endOffsets": "7444,7554"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\034f511a629c0fda711794a09fef4382\\transformed\\appcompat-1.5.1\\res\\values-lo\\values-lo.xml",
                     "from": {
@@ -35,23 +52,6 @@
                         "startOffsets": "7720",
                         "endColumns": "100",
                         "endOffsets": "7816"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\c9e1a58b01f16e272a86f5ce7452796b\\transformed\\navigation-ui-2.4.1\\res\\values-lo\\values-lo.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,164",
-                        "endColumns": "108,109",
-                        "endOffsets": "159,269"
-                    },
-                    "to": {
-                        "startLines": "89,90",
-                        "startColumns": "4,4",
-                        "startOffsets": "7340,7449",
-                        "endColumns": "108,109",
-                        "endOffsets": "7444,7554"
                     }
                 },
                 {

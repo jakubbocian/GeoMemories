@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.geomemories.app-mergeDebugResources-34:/values-b+sr+Latn/values-b+sr+Latn.xml",
+            "outputFile": "com.example.geomemories.app-mergeDebugResources-38:/values-b+sr+Latn/values-b+sr+Latn.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\c9e1a58b01f16e272a86f5ce7452796b\\transformed\\navigation-ui-2.4.1\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,162",
-                        "endColumns": "106,122",
-                        "endOffsets": "157,280"
-                    },
-                    "to": {
-                        "startLines": "90,91",
-                        "startColumns": "4,4",
-                        "startOffsets": "7563,7670",
-                        "endColumns": "106,122",
-                        "endOffsets": "7665,7788"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\034f511a629c0fda711794a09fef4382\\transformed\\appcompat-1.5.1\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
                     "from": {
@@ -54,6 +37,23 @@
                         "endLines": "6,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,92",
                         "endColumns": "12,79,93,131,80,65,92,67,62,102,65,55,70,59,53,111,56,60,53,75,124,86,82,138,81,82,87,53,55,65,73,77,88,75,75,74,71,89,72,91,95,71,75,95,52,66,86,86,61,63,62,104,103,95,106,57,59,79",
                         "endOffsets": "369,3180,3274,3406,3487,3553,3646,3714,3777,3880,3946,4002,4073,4133,4187,4299,4356,4417,4471,4547,4672,4759,4842,4981,5063,5146,5234,5288,5344,5410,5484,5562,5651,5727,5803,5878,5950,6040,6113,6205,6301,6373,6449,6545,6598,6665,6752,6839,6901,6965,7028,7133,7237,7333,7440,7498,7558,7868"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jakub\\.gradle\\caches\\transforms-3\\88442b52181f3fa4317809c14ce9014b\\transformed\\navigation-ui-2.5.3\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,162",
+                        "endColumns": "106,122",
+                        "endOffsets": "157,280"
+                    },
+                    "to": {
+                        "startLines": "90,91",
+                        "startColumns": "4,4",
+                        "startOffsets": "7563,7670",
+                        "endColumns": "106,122",
+                        "endOffsets": "7665,7788"
                     }
                 },
                 {
