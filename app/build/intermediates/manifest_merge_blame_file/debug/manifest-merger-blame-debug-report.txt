@@ -6,9 +6,9 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml
+8-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml
+9-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml
 10
 11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 12    <!-- <uses-sdk android:minSdkVersion="14"/> -->
@@ -29,76 +29,76 @@
 17-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Jakub\.gradle\caches\transforms-3\850228bafd88a158c87c2f70f2d17e0e\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:26:22-107
 18
 19    <application
-19-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:5:5-42:19
+19-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:5:5-42:19
 20        android:allowBackup="true"
-20-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:6:9-35
+20-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:6:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 21-->[androidx.core:core:1.8.0] C:\Users\Jakub\.gradle\caches\transforms-3\102215101d21fdb02f0f27bbfd4ebd5d\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 22        android:dataExtractionRules="@xml/data_extraction_rules"
-22-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:7:9-65
+22-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:7:9-65
 23        android:debuggable="true"
 24        android:fullBackupContent="@xml/backup_rules"
-24-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:8:9-54
+24-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:8:9-54
 25        android:icon="@mipmap/ic_launcher"
-25-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:9:9-43
+25-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:9:9-43
 26        android:label="@string/app_name"
-26-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:10:9-41
+26-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:10:9-41
 27        android:roundIcon="@mipmap/ic_launcher_round"
-27-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:11:9-54
+27-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:11:9-54
 28        android:supportsRtl="true"
-28-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:12:9-35
+28-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:12:9-35
 29        android:testOnly="true"
 30        android:theme="@style/Theme.GeoMemories" >
-30-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:13:9-49
+30-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:13:9-49
 31        <activity
-31-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:15:9-21:20
+31-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:15:9-21:20
 32            android:name="com.example.geomemories.login"
-32-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:16:13-34
+32-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:16:13-34
 33            android:exported="false" >
-33-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:17:13-37
+33-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:17:13-37
 34            <meta-data
-34-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:18:13-20:36
+34-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:18:13-20:36
 35                android:name="android.app.lib_name"
-35-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:19:17-52
+35-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:19:17-52
 36                android:value="" />
-36-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:20:17-33
+36-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:20:17-33
 37        </activity>
 38        <activity
-38-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:22:9-28:20
+38-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:22:9-28:20
 39            android:name="com.example.geomemories.register"
-39-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:23:13-37
+39-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:23:13-37
 40            android:exported="false" >
-40-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:24:13-37
+40-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:24:13-37
 41            <meta-data
-41-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:18:13-20:36
+41-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:18:13-20:36
 42                android:name="android.app.lib_name"
-42-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:19:17-52
+42-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:19:17-52
 43                android:value="" />
-43-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:20:17-33
+43-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:20:17-33
 44        </activity>
 45        <activity
-45-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:29:9-41:20
+45-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:29:9-41:20
 46            android:name="com.example.geomemories.MainActivity"
-46-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:30:13-41
+46-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:30:13-41
 47            android:exported="true" >
-47-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:31:13-36
+47-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:31:13-36
 48            <intent-filter>
-48-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:32:13-36:29
+48-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:32:13-36:29
 49                <action android:name="android.intent.action.MAIN" />
-49-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:33:17-69
-49-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:33:25-66
+49-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:33:17-69
+49-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:33:25-66
 50
 51                <category android:name="android.intent.category.LAUNCHER" />
-51-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:35:17-77
-51-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:35:27-74
+51-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:35:17-77
+51-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:35:27-74
 52            </intent-filter>
 53
 54            <meta-data
-54-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:18:13-20:36
+54-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:18:13-20:36
 55                android:name="android.app.lib_name"
-55-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:19:17-52
+55-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:19:17-52
 56                android:value="" />
-56-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories3\app\src\main\AndroidManifest.xml:20:17-33
+56-->C:\Users\Jakub\AndroidStudioProjects\GeoMemories\app\src\main\AndroidManifest.xml:20:17-33
 57        </activity>
 58
 59        <service
