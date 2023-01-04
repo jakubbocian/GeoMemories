@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "42115329219",
+    "project_id": "geomemories-d547b",
+    "storage_bucket": "geomemories-d547b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42115329219:android:799378c2b39689596f8676",
+        "android_client_info": {
+          "package_name": "com.example.geomemories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42115329219-s4672104b1rt9jirsda35mrkrs7fp94p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmQ7lXG_kHdH1U8OhjynYc-Uslt7Cyal0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42115329219-s4672104b1rt9jirsda35mrkrs7fp94p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
