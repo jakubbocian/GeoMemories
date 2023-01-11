@@ -21,21 +21,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() == null){
             Intent intent = new Intent(getApplicationContext(), login.class);
             startActivity(intent);
+        }else {
+            Intent intent = new Intent(getApplicationContext(), mappa.class);
+            startActivity(intent);
         }
-
-        Button logout = findViewById(R.id.buttonLogout);
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-                Intent intent = new Intent(getApplicationContext(), login.class);
-                startActivity(intent);
-            }
-        });
     }
 }
