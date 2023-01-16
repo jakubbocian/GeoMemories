@@ -18,10 +18,18 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class register extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
+    boolean registred = false;
 
     public void goToLogin() {
         Intent intent = new Intent(getApplicationContext(), login.class);
@@ -29,6 +37,7 @@ public class register extends AppCompatActivity {
     }
 
     public void register(){
+
         String email = ((EditText) findViewById(R.id.inputEmail)).getText().toString();
         String password = ((EditText) findViewById(R.id.inputPass)).getText().toString();
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -36,10 +45,15 @@ public class register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
+                            registred = true;
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(register.this, "Registration success.",
                                     Toast.LENGTH_SHORT).show();
+                            Map<String,Object> userToWrite = new HashMap<>();
+                            User saveUser = new User(((EditText) findViewById(R.id.inputName)).getText().toString(), ((EditText) findViewById(R.id.inputSurname)).getText().toString());
+                            userToWrite.put("name", saveUser.name);
+                            userToWrite.put("surname", saveUser.surname);
+                            db.collection("users").document(user.getUid()).set(userToWrite);
                             goToLogin();
                         } else {
                             Toast.makeText(register.this, "Registration failed.",
@@ -54,6 +68,7 @@ public class register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
