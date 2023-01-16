@@ -30,5 +30,15 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), mappa.class);
             startActivity(intent);
         }
+
+        Button buttonLogout = (Button) findViewById(R.id.buttonLogout);
+        buttonLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent = new Intent(getApplicationContext(), login.class);
+                startActivity(intent);
+            }
+        });
     }
 }
