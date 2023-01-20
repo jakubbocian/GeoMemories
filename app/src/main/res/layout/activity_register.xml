@@ -4,95 +4,138 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EEE5E9"
+    android:backgroundTint="#D3C5C5"
     tools:context=".register">
 
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin2"
+        app:srcCompat="@drawable/_2" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin2"
+        app:srcCompat="@drawable/googleg_standard_color_18" />
+
+    <TextView
+        android:id="@+id/linkRegister2"
+        android:layout_width="143dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="35dp"
+        android:clickable="true"
+        android:text="Già registrato? Accedi"
+        android:textColor="#070404"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
-        android:id="@+id/inputName"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="132dp"
+        android:id="@+id/inputPass2"
+        android:layout_width="263dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="97dp"
+        android:ems="10"
+        android:hint="Conferma Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail2" />
+
+    <EditText
+        android:id="@+id/inputEmail6"
+        android:layout_width="263dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:hint="Nome"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
+        android:textColor="#807083"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/inputSurname"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:id="@+id/inputEmail4"
+        android:layout_width="263dp"
+        android:layout_height="57dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Cognome"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
+        android:textColor="#807083"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputName" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail6" />
 
     <EditText
-        android:id="@+id/inputEmail"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:id="@+id/inputEmail3"
+        android:layout_width="263dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Nome Utente"
+        android:inputType="textEmailAddress"
+        android:textColor="#807083"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail4" />
+
+    <EditText
+        android:id="@+id/inputEmail2"
+        android:layout_width="263dp"
+        android:layout_height="57dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="#807083"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputSurname" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail3" />
 
     <EditText
-        android:id="@+id/inputPass"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:id="@+id/inputPass3"
+        android:layout_width="263dp"
+        android:layout_height="57dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
-
-    <EditText
-        android:id="@+id/inputPass2"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Conferma password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPass" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail2" />
 
     <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:id="@+id/buttonLogin2"
+        android:layout_width="170dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#E9724C"
         android:text="Registrati"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="360dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPass2" />
-
-    <TextView
-        android:id="@+id/linkLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:text="Già registrato? Accedi"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="UsingOnClickInXml" />
+        app:layout_constraintTop_toBottomOf="@+id/inputPass2"
+        app:strokeColor="#D33F11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
