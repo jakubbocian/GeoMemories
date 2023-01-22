@@ -75,7 +75,7 @@ public class login extends AppCompatActivity {
             }
         });
 
-        TextView linkRegister = (TextView) findViewById(R.id.linkRegister);
+        TextView linkRegister = (TextView) findViewById(R.id.linkLogin);
         linkRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
