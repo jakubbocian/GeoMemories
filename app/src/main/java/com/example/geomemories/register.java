@@ -30,6 +30,7 @@ public class register extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     boolean registred = false;
+    private FirebaseDatabase database;
 
     public void goToLogin() {
         Intent intent = new Intent(getApplicationContext(), login.class);
@@ -40,6 +41,7 @@ public class register extends AppCompatActivity {
 
         String email = ((EditText) findViewById(R.id.inputEmail)).getText().toString();
         String password = ((EditText) findViewById(R.id.inputPass)).getText().toString();
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -49,16 +51,22 @@ public class register extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(register.this, "Registration success.",
                                     Toast.LENGTH_SHORT).show();
-                            Map<String,Object> userToWrite = new HashMap<>();
-                            User saveUser = new User(((EditText) findViewById(R.id.inputName)).getText().toString(), ((EditText) findViewById(R.id.inputSurname)).getText().toString());
-                            userToWrite.put("name", saveUser.name);
-                            userToWrite.put("surname", saveUser.surname);
-                            db.collection("users").document(user.getUid()).set(userToWrite);
+                            registred = true;
+                            String uid = user.getUid();
+                            database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("message");
+                            myRef.setValue("Hello, World!");
+
+                            /*User userToDb = new User(((EditText) findViewById(R.id.inputName)).getText().toString(), ((EditText) findViewById(R.id.inputSurname)).getText().toString());
+                            mDatabase.child("users").child(uid).setValue(userToDb).addOnSuccessListener(aVoid -> {
+                                Log.d("TAG", "onSuccess: user Profile is created for " + uid);
+                            });*/
                             goToLogin();
                         } else {
                             Toast.makeText(register.this, "Registration failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
+
                     }
                 });
     }
@@ -66,6 +74,8 @@ public class register extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
