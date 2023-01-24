@@ -20,6 +20,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/photo"
         map:maxImageSize="40dp"
         android:backgroundTint="@color/yellow"
         map:layout_anchor="@id/bottom_app_bar"
