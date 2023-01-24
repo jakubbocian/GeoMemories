@@ -4,11 +4,12 @@
 
     <item
         android:id="@+id/person"
-        android:title="Home"
+        android:title="Account"
         android:icon="@drawable/ic_baseline_person_24"
-        app:cnb_iconColor="@color/dark_pink"
-        app:cnb_backgroundColor="@color/dark_pink"
+        app:cnb_iconColor="#63214F"
+        app:cnb_backgroundColor="#EF84CF"
         />
+
 
     <item
         android:id="@+id/blank"
@@ -26,8 +27,8 @@
 
     <item
         android:id="@+id/home"
-        android:title="Home"
-        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Settings"
+        android:icon="@drawable/ic_baseline_settings_24"
         app:cnb_iconColor="@color/dark_blue"
         app:cnb_backgroundColor="#402C93AB"
         />

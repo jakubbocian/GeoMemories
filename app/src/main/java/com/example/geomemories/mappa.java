@@ -36,7 +36,7 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        Button buttonLogout = (Button) findViewById(R.id.buttonLogout);
+        /*Button buttonLogout = (Button) findViewById(R.id.buttonLogout);
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +44,7 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
                 Intent intent = new Intent(getApplicationContext(), login.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
     /**

@@ -79,12 +79,12 @@
         android:id="@+id/imageButton"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="92dp"
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809"
+        app:layout_constraintVertical_bias="0.861"
         app:srcCompat="@drawable/googleg_standard_color_18" />
 
     <ImageButton
@@ -94,10 +94,10 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintHorizontal_bias="0.675"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809"
+        app:layout_constraintVertical_bias="0.861"
         app:srcCompat="@drawable/_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

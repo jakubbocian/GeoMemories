@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        Button buttonLogout = (Button) findViewById(R.id.buttonLogout);
+        /*Button buttonLogout = (Button) findViewById(R.id.buttonLogout);
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +39,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), login.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 }

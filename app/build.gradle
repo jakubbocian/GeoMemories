@@ -41,6 +41,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:24.4.1'
     implementation 'com.google.firebase:firebase-auth:21.1.0'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.31'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
