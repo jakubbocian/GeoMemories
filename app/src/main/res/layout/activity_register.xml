@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.651"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegister"
         app:srcCompat="@drawable/_2" />
 
     <ImageButton
@@ -28,11 +28,11 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegister"
         app:srcCompat="@drawable/googleg_standard_color_18" />
 
     <TextView
-        android:id="@+id/linkRegister2"
+        android:id="@+id/linkLogin"
         android:layout_width="143dp"
         android:layout_height="21dp"
         android:layout_marginBottom="35dp"
@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/inputPass2"
+        android:id="@+id/inputPassConfirm"
         android:layout_width="263dp"
         android:layout_height="57dp"
         android:layout_marginTop="97dp"
@@ -56,10 +56,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail2" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
     <EditText
-        android:id="@+id/inputEmail6"
+        android:id="@+id/inputName"
         android:layout_width="263dp"
         android:layout_height="57dp"
         android:layout_marginTop="60dp"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/inputEmail4"
+        android:id="@+id/inputSurname"
         android:layout_width="263dp"
         android:layout_height="57dp"
         android:layout_marginTop="20dp"
@@ -82,10 +82,10 @@
         android:textColor="#807083"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail6" />
+        app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
     <EditText
-        android:id="@+id/inputEmail3"
+        android:id="@+id/inputUsername"
         android:layout_width="263dp"
         android:layout_height="57dp"
         android:layout_marginTop="20dp"
@@ -95,10 +95,10 @@
         android:textColor="#807083"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail4" />
+        app:layout_constraintTop_toBottomOf="@+id/inputSurname" />
 
     <EditText
-        android:id="@+id/inputEmail2"
+        android:id="@+id/inputEmail"
         android:layout_width="263dp"
         android:layout_height="57dp"
         android:layout_marginTop="20dp"
@@ -108,10 +108,10 @@
         android:textColor="#807083"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail3" />
+        app:layout_constraintTop_toBottomOf="@+id/inputUsername" />
 
     <EditText
-        android:id="@+id/inputPass3"
+        android:id="@+id/inputPass"
         android:layout_width="263dp"
         android:layout_height="57dp"
         android:layout_marginTop="20dp"
@@ -120,10 +120,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail2" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
     <Button
-        android:id="@+id/buttonLogin2"
+        android:id="@+id/buttonRegister"
         android:layout_width="170dp"
         android:layout_height="43dp"
         android:layout_marginTop="30dp"
@@ -135,7 +135,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPass2"
+        app:layout_constraintTop_toBottomOf="@+id/inputPassConfirm"
         app:strokeColor="#D33F11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
