@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".mappa" />
+    android:layout_height="match_parent">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".mappa" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        map:maxImageSize="40dp"
+        android:backgroundTint="@color/yellow"
+        map:layout_anchor="@id/bottom_app_bar"
+        android:src="@drawable/ic_baseline_add_24"
+    />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        map:backgroundTint="@color/white"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        map:fabCradleMargin="6dp"
+        map:fabAlignmentMode="center"
+        map:fabCradleRoundedCornerRadius="80dp"
+
+    >
+
+        <com.ismaeldivita.chipnavigation.ChipNavigationBar
+            android:id="@+id/chip_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            map:cnb_iconSize="30dp"
+            map:cnb_menuResource="@menu/navigation_menu_with_botton"
+            map:cnb_radius="28dp"
+            map:cnb_unselectedColor="@color/black"
+            />
+    </com.google.android.material.bottomappbar.BottomAppBar>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
