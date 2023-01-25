@@ -1,22 +1,33 @@
 package com.example.geomemories;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.FragmentActivity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationRequest;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -24,13 +35,31 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.geomemories.databinding.ActivityMappaBinding;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 public class mappa extends FragmentActivity implements OnMapReadyCallback {
+
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
+    private int REQUEST_LOCATION_PERMISSION = 2;
+    private static final int REQUEST_CAMERA_PERMISSION = 3;
+
+    private FusedLocationProviderClient fusedLocationClient;
 
     private GoogleMap mMap;
     private ActivityMappaBinding binding;
@@ -39,10 +68,88 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
     private LocationManager mLocationManager;
     private LocationRequest mLocationRequest;
 
-    public void onLocationChanged(Location location) {
-        mLocation = location;
-        Toast.makeText(this, "Location changed: Lat: " + location.getLatitude() + " Lng: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
 
+    private void openCamera(){
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == REQUEST_CAMERA_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission was granted
+                openCamera();
+            } else {
+                // Permission was denied
+            }
+        }
+    }
+
+    private void takePicture() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.CAMERA }, REQUEST_CAMERA_PERMISSION);
+        } else {
+            // Permission has already been granted
+            openCamera();
+        }
+
+    }
+
+    private void marker(){
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        if (location != null) {
+                            double latitude = location.getLatitude();
+                            double longitude = location.getLongitude();
+                            LatLng latLng = new LatLng(latitude, longitude);
+                            mMap.addMarker(new MarkerOptions().position(latLng).title("Current Location"));
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+                        }
+                    }
+                });
+    }
+
+    private void addMarker(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // Request location permission
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERMISSION);
+        } else {
+            // Permission has already been granted
+            marker();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageRef = storage.getReference(mAuth.getUid()).child("prova.jpg");
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] dataToUpload = baos.toByteArray();
+            UploadTask uploadTask = storageRef.putBytes(dataToUpload);
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    // Handle unsuccessful uploads
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    addMarker();
+                    Toast.makeText(mappa.this, "Foto caricata con successo", Toast.LENGTH_SHORT).show();
+                }
+            });
+            // Do something with the image, such as displaying it on an ImageView
+            String savedImageURL = MediaStore.Images.Media.insertImage(getContentResolver(), imageBitmap, "title", "description");
+        }
     }
 
     @Override
@@ -50,22 +157,11 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
 
         mAuth = FirebaseAuth.getInstance();
-
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        @SuppressLint("MissingPermission") Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        /**/
 
 
-        /*Button addPhoto = (Button) findViewById(R.id.photo);
-        addPhoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Double lat = location.getLatitude();
-                Double lon = location.getLongitude();
 
-                Toast.makeText(getApplicationContext(), "Latitudine: " + lat + " Longitudine: " + lon, Toast.LENGTH_LONG).show();
-            }
-        });*/
 
         binding = ActivityMappaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -95,5 +191,13 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        FloatingActionButton photoButton = findViewById(R.id.photo);
+        photoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                takePicture();
+            }
+        });
     }
 }
