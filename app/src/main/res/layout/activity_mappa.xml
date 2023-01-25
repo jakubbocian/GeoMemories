@@ -17,15 +17,15 @@
         tools:context=".mappa" />
 
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/photo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/photo"
-        map:maxImageSize="40dp"
         android:backgroundTint="@color/yellow"
-        map:layout_anchor="@id/bottom_app_bar"
         android:src="@drawable/ic_baseline_add_24"
-    />
+        map:layout_anchor="@id/bottom_app_bar"
+        map:maxImageSize="40dp" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"
@@ -54,4 +54,5 @@
             map:cnb_unselectedColor="@color/black"
             />
     </com.google.android.material.bottomappbar.BottomAppBar>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
