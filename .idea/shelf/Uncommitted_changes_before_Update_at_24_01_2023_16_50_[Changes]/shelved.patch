@@ -1,0 +1,295 @@
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Home Page\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonLogout\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"28dp\"\r\n        android:layout_marginEnd=\"28dp\"\r\n        android:text=\"Logout\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonPhoto\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginBottom=\"28dp\"\r\n        android:text=\"Foto\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision f225cd4413a5c6077f7774deae4fe95060a746ac)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1674491107905)
+@@ -4,36 +4,4 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".MainActivity">
+-
+-    <TextView
+-        android:id="@+id/textView"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="Home Page"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <Button
+-        android:id="@+id/buttonLogout"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginTop="28dp"
+-        android:layout_marginEnd="28dp"
+-        android:text="Logout"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <Button
+-        android:id="@+id/buttonPhoto"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginBottom="28dp"
+-        android:text="Foto"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.498"
+-        app:layout_constraintStart_toStartOf="parent" />
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++    tools:context=".MainActivity"/>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"#EEE5E9\"\r\n    android:backgroundTint=\"#D3C5C5\"\r\n    tools:context=\".login\">\r\n\r\n    <EditText\r\n        android:id=\"@+id/inputEmail\"\r\n        android:layout_width=\"263dp\"\r\n        android:layout_height=\"57dp\"\r\n        android:layout_marginTop=\"244dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"Email\"\r\n        android:inputType=\"textEmailAddress\"\r\n        android:textColor=\"#807083\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/inputPass\"\r\n        android:layout_width=\"263dp\"\r\n        android:layout_height=\"57dp\"\r\n        android:layout_marginTop=\"36dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"Password\"\r\n        android:inputType=\"textPassword\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.492\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/inputEmail\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/linkLogin\"\r\n        android:layout_width=\"199dp\"\r\n        android:layout_height=\"19dp\"\r\n        android:layout_marginBottom=\"48dp\"\r\n        android:clickable=\"true\"\r\n        android:text=\"Non hai account? Registrati qui.\"\r\n        android:textColor=\"#070404\"\r\n        android:textSize=\"14sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonLogin\"\r\n        android:layout_width=\"170dp\"\r\n        android:layout_height=\"43dp\"\r\n        android:layout_marginTop=\"48dp\"\r\n        android:backgroundTint=\"#E9724C\"\r\n        android:text=\"Log In\"\r\n        android:textSize=\"18sp\"\r\n        android:textStyle=\"bold\"\r\n        app:cornerRadius=\"360dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.497\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/inputPass\"\r\n        app:strokeColor=\"#D33F11\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView2\"\r\n        android:layout_width=\"131dp\"\r\n        android:layout_height=\"56dp\"\r\n        android:text=\"Log In\"\r\n        android:textColor=\"#070404\"\r\n        android:textSize=\"43sp\"\r\n        android:textStyle=\"bold\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        tools:layout_editor_absoluteY=\"108dp\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/imageButton\"\r\n        android:layout_width=\"64dp\"\r\n        android:layout_height=\"64dp\"\r\n        android:layout_marginStart=\"112dp\"\r\n        android:backgroundTint=\"#00FFFFFF\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:srcCompat=\"@drawable/googleg_standard_color_18\"\r\n        tools:layout_editor_absoluteY=\"540dp\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/imageButton6\"\r\n        android:layout_width=\"64dp\"\r\n        android:layout_height=\"64dp\"\r\n        android:background=\"#00FFFFFF\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.651\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:srcCompat=\"@drawable/_2\"\r\n        tools:layout_editor_absoluteY=\"540dp\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+--- a/app/src/main/res/layout/activity_login.xml	(revision f225cd4413a5c6077f7774deae4fe95060a746ac)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1674488498687)
+@@ -4,96 +4,54 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    android:background="#EEE5E9"
+-    android:backgroundTint="#D3C5C5"
+     tools:context=".login">
+ 
+     <EditText
+         android:id="@+id/inputEmail"
+-        android:layout_width="263dp"
+-        android:layout_height="57dp"
+-        android:layout_marginTop="244dp"
++        android:layout_width="200dp"
++        android:layout_height="50dp"
++        android:layout_marginTop="132dp"
+         android:ems="10"
+         android:hint="Email"
+         android:inputType="textEmailAddress"
+-        android:textColor="#807083"
+         app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.497"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+ 
+     <EditText
+         android:id="@+id/inputPass"
+-        android:layout_width="263dp"
+-        android:layout_height="57dp"
+-        android:layout_marginTop="36dp"
++        android:layout_width="200dp"
++        android:layout_height="50dp"
++        android:layout_marginTop="32dp"
+         android:ems="10"
+         android:hint="Password"
+         android:inputType="textPassword"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.492"
++        app:layout_constraintHorizontal_bias="0.497"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+ 
+     <TextView
+-        android:id="@+id/linkLogin"
+-        android:layout_width="199dp"
+-        android:layout_height="19dp"
+-        android:layout_marginBottom="48dp"
+-        android:clickable="true"
++        android:id="@+id/linkRegister"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginBottom="60dp"
+         android:text="Non hai account? Registrati qui."
+-        android:textColor="#070404"
+-        android:textSize="14sp"
++        android:clickable="true"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent" />
+ 
+     <Button
+         android:id="@+id/buttonLogin"
+-        android:layout_width="170dp"
+-        android:layout_height="43dp"
+-        android:layout_marginTop="48dp"
+-        android:backgroundTint="#E9724C"
+-        android:text="Log In"
+-        android:textSize="18sp"
+-        android:textStyle="bold"
+-        app:cornerRadius="360dp"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="24dp"
++        android:text="Button"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.497"
++        app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/inputPass"
+-        app:strokeColor="#D33F11" />
+-
+-    <TextView
+-        android:id="@+id/textView2"
+-        android:layout_width="131dp"
+-        android:layout_height="56dp"
+-        android:text="Log In"
+-        android:textColor="#070404"
+-        android:textSize="43sp"
+-        android:textStyle="bold"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        tools:layout_editor_absoluteY="108dp" />
+-
+-    <ImageButton
+-        android:id="@+id/imageButton"
+-        android:layout_width="64dp"
+-        android:layout_height="64dp"
+-        android:layout_marginStart="112dp"
+-        android:backgroundTint="#00FFFFFF"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:srcCompat="@drawable/googleg_standard_color_18"
+-        tools:layout_editor_absoluteY="540dp" />
+-
+-    <ImageButton
+-        android:id="@+id/imageButton6"
+-        android:layout_width="64dp"
+-        android:layout_height="64dp"
+-        android:background="#00FFFFFF"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.651"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:srcCompat="@drawable/_2"
+-        tools:layout_editor_absoluteY="540dp" />
+-
++        app:layout_constraintTop_toBottomOf="@+id/inputPass" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_mappa.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".mappa\">\r\n\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonLogout\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginEnd=\"28dp\"\r\n        android:layout_marginTop=\"28dp\"\r\n        android:text=\"Logout\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonProfilo\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginEnd=\"28dp\"\r\n        android:layout_marginTop=\"28dp\"\r\n        android:text=\"Profilo\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/buttonLogout\" />\r\n    <Button\r\n        android:id=\"@+id/buttonPhoto\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginBottom=\"28dp\"\r\n        android:text=\"Foto\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\" />\r\n\r\n    <fragment xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n        xmlns:map=\"http://schemas.android.com/apk/res-auto\"\r\n        xmlns:tools=\"http://schemas.android.com/tools\"\r\n        android:id=\"@+id/map\"\r\n        android:name=\"com.google.android.gms.maps.SupportMapFragment\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        tools:context=\".mappa\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_mappa.xml b/app/src/main/res/layout/activity_mappa.xml
+--- a/app/src/main/res/layout/activity_mappa.xml	(revision f225cd4413a5c6077f7774deae4fe95060a746ac)
++++ b/app/src/main/res/layout/activity_mappa.xml	(date 1674547097724)
+@@ -7,42 +7,34 @@
+     tools:context=".mappa">
+ 
+ 
+-    <Button
+-        android:id="@+id/buttonLogout"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginEnd="28dp"
+-        android:layout_marginTop="28dp"
+-        android:text="Logout"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <Button
+-        android:id="@+id/buttonProfilo"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginEnd="28dp"
+-        android:layout_marginTop="28dp"
+-        android:text="Profilo"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/buttonLogout" />
+-    <Button
+-        android:id="@+id/buttonPhoto"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginBottom="28dp"
+-        android:text="Foto"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.498"
+-        app:layout_constraintStart_toStartOf="parent" />
+-
+-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+-        xmlns:map="http://schemas.android.com/apk/res-auto"
+-        xmlns:tools="http://schemas.android.com/tools"
++    <fragment
+         android:id="@+id/map"
+         android:name="com.google.android.gms.maps.SupportMapFragment"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+-        tools:context=".mappa" />
++        tools:context=".mappa"
++        tools:layout_editor_absoluteY="675dp" />
++
++    <FrameLayout
++        android:layout_width="0dp"
++        android:layout_height="0dp"
++        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent">
++
++    </FrameLayout>
++
++    <com.google.android.material.bottomnavigation.BottomNavigationView
++        android:id="@+id/bottomNavigationView"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="#FF9800"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:menu="@menu/bottom_nav_menu">
++
++    </com.google.android.material.bottomnavigation.BottomNavigationView>
++
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">GeoMemories</string>\r\n    <string name=\"title_activity_mappa\">mappa</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision f225cd4413a5c6077f7774deae4fe95060a746ac)
++++ b/app/src/main/res/values/strings.xml	(date 1674488498725)
+@@ -1,4 +1,6 @@
+ <resources>
+     <string name="app_name">GeoMemories</string>
+     <string name="title_activity_mappa">mappa</string>
++    <!-- TODO: Remove or change this placeholder text -->
++    <string name="hello_blank_fragment">Hello blank fragment</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/geomemories/login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.geomemories;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.firebase.auth.AuthResult;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\n\r\npublic class login extends AppCompatActivity {\r\n\r\n    private FirebaseAuth mAuth;\r\n\r\n    public void goToRegister() {\r\n        Intent intent = new Intent(getApplicationContext(), register.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void goToMain() {\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void login(){\r\n        String email = ((EditText) findViewById(R.id.inputEmail)).getText().toString();\r\n        String password = ((EditText) findViewById(R.id.inputPass)).getText().toString();\r\n\r\n        mAuth.signInWithEmailAndPassword(email, password)\r\n                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {\r\n                    @Override\r\n                    public void onComplete(@NonNull Task<AuthResult> task) {\r\n                        if (task.isSuccessful()) {\r\n                            FirebaseUser user = mAuth.getCurrentUser();\r\n                            goToMain();\r\n                        } else {\r\n                            Toast.makeText(login.this, \"Login failed.\",\r\n                                    Toast.LENGTH_SHORT).show();\r\n                        }\r\n                    }\r\n                });\r\n    }\r\n\r\n    @Override\r\n    protected void onStart() {\r\n        super.onStart();\r\n        FirebaseUser currentUser = mAuth.getCurrentUser();\r\n        if(currentUser != null){\r\n            Toast.makeText(login.this, \"Already logged in.\",\r\n                    Toast.LENGTH_SHORT).show();\r\n            goToMain();\r\n        }\r\n    }\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login);\r\n        mAuth = FirebaseAuth.getInstance();\r\n\r\n        Button btnLogin = findViewById(R.id.buttonLogin);\r\n        btnLogin.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                login();\r\n            }\r\n        });\r\n\r\n        TextView linkRegister = (TextView) findViewById(R.id.linkLogin);\r\n        linkRegister.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                goToRegister();\r\n            }\r\n        });\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/geomemories/login.java b/app/src/main/java/com/example/geomemories/login.java
+--- a/app/src/main/java/com/example/geomemories/login.java	(revision f225cd4413a5c6077f7774deae4fe95060a746ac)
++++ b/app/src/main/java/com/example/geomemories/login.java	(date 1674488498759)
+@@ -17,7 +17,7 @@
+ import com.google.firebase.auth.FirebaseAuth;
+ import com.google.firebase.auth.FirebaseUser;
+ 
+-public class login extends AppCompatActivity {
++public class zlogin extends AppCompatActivity {
+ 
+     private FirebaseAuth mAuth;
+ 

@@ -1,0 +1,464 @@
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Home Page\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonLogout\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"28dp\"\r\n        android:layout_marginTop=\"28dp\"\r\n        android:text=\"Logout\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision 64e3d887214e52c8eb7ca6821e03d065b084cc36)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1674486975654)
+@@ -6,24 +6,25 @@
+     android:layout_height="match_parent"
+     tools:context=".MainActivity">
+ 
+-
+-    <TextView
+-        android:id="@+id/textView"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="Home Page"
+-        app:layout_constraintBottom_toBottomOf="parent"
++    <FrameLayout
++        android:layout_width="0dp"
++        android:layout_height="0dp"
++        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
++        app:layout_constraintTop_toTopOf="parent">
+ 
+-    <Button
+-        android:id="@+id/buttonLogout"
+-        android:layout_width="wrap_content"
++    </FrameLayout>
++
++    <com.google.android.material.bottomnavigation.BottomNavigationView
++        android:id="@+id/bottomNavigationView"
++        android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="28dp"
+-        android:layout_marginTop="28dp"
+-        android:text="Logout"
++        android:background="#FF9800"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
++        app:menu="@menu/bottom_nav_menu">
++
++    </com.google.android.material.bottomnavigation.BottomNavigationView>
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".login\">\r\n\r\n    <EditText\r\n        android:id=\"@+id/inputEmail\"\r\n        android:layout_width=\"200dp\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginTop=\"132dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"Email\"\r\n        android:inputType=\"textEmailAddress\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.497\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/inputPass\"\r\n        android:layout_width=\"200dp\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginTop=\"32dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"Password\"\r\n        android:inputType=\"textPassword\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.497\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/inputEmail\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/linkRegister\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginBottom=\"60dp\"\r\n        android:text=\"Non hai account? Registrati qui.\"\r\n        android:clickable=\"true\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonLogin\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"24dp\"\r\n        android:text=\"Button\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/inputPass\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+--- a/app/src/main/res/layout/activity_login.xml	(revision 64e3d887214e52c8eb7ca6821e03d065b084cc36)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1674117907549)
+@@ -46,12 +46,32 @@
+ 
+     <Button
+         android:id="@+id/buttonLogin"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginTop="24dp"
+-        android:text="Button"
++        android:layout_width="127dp"
++        android:layout_height="49dp"
++        android:layout_marginTop="272dp"
++        android:angle="90.0"
++        android:background="#FF9800"
++        android:backgroundTint="#FF9800"
++        android:backgroundTintMode="src_over"
++        android:color="#FFC107"
++        android:shadowColor="#6E3333"
++        android:text="Log In"
++        app:iconTint="#FF9800"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/inputPass" />
++        app:layout_constraintTop_toBottomOf="@+id/inputPass"
++        app:strokeColor="#FF9800" />
++
++    <TextView
++        android:id="@+id/textView2"
++        android:layout_width="103dp"
++        android:layout_height="36dp"
++        android:text="Ciao"
++        android:textColor="#433737"
++        android:textSize="24sp"
++        android:textStyle="bold"
++        tools:layout_editor_absoluteX="143dp"
++        tools:layout_editor_absoluteY="76dp" />
++
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">GeoMemories</string>\r\n    <string name=\"title_activity_mappa\">mappa</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 64e3d887214e52c8eb7ca6821e03d065b084cc36)
++++ b/app/src/main/res/values/strings.xml	(date 1674487130269)
+@@ -1,4 +1,6 @@
+ <resources>
+     <string name="app_name">GeoMemories</string>
+     <string name="title_activity_mappa">mappa</string>
++    <!-- TODO: Remove or change this placeholder text -->
++    <string name="hello_blank_fragment">Hello blank fragment</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_register.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".register\">\r\n\r\n    <EditText\r\n        android:id=\"@+id/inputName\"\r\n        android:layout_width=\"200dp\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginTop=\"132dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"Nome\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.497\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/inputSurname\"\r\n        android:layout_width=\"200dp\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"Cognome\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.497\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/inputName\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/inputEmail\"\r\n        android:layout_width=\"200dp\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"Email\"\r\n        android:inputType=\"textEmailAddress\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.497\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/inputSurname\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/inputPass\"\r\n        android:layout_width=\"200dp\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"Password\"\r\n        android:inputType=\"textPassword\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.497\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/inputEmail\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/inputPass2\"\r\n        android:layout_width=\"200dp\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"Conferma password\"\r\n        android:inputType=\"textPassword\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.497\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/inputPass\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonRegister\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:text=\"Registrati\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/inputPass2\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/linkLogin\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginBottom=\"60dp\"\r\n        android:text=\"Già registrato? Accedi\"\r\n        android:clickable=\"true\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        tools:ignore=\"UsingOnClickInXml\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_register.xml b/app/src/main/res/layout/activity_register.xml
+--- a/app/src/main/res/layout/activity_register.xml	(revision 64e3d887214e52c8eb7ca6821e03d065b084cc36)
++++ b/app/src/main/res/layout/activity_register.xml	(date 1674141069178)
+@@ -95,4 +95,14 @@
+         app:layout_constraintStart_toStartOf="parent"
+         tools:ignore="UsingOnClickInXml" />
+ 
++    <ImageButton
++        android:id="@+id/imageButton"
++        android:layout_width="63dp"
++        android:layout_height="57dp"
++        android:background="#00FFFFFF"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:srcCompat="@drawable/googleg_standard_color_18"
++        tools:layout_editor_absoluteY="567dp" />
++
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/geomemories/login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.geomemories;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.firebase.auth.AuthResult;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\n\r\npublic class login extends AppCompatActivity {\r\n\r\n    private FirebaseAuth mAuth;\r\n\r\n    public void goToRegister() {\r\n        Intent intent = new Intent(getApplicationContext(), register.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void goToMain() {\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void login(){\r\n        String email = ((EditText) findViewById(R.id.inputEmail)).getText().toString();\r\n        String password = ((EditText) findViewById(R.id.inputPass)).getText().toString();\r\n\r\n        mAuth.signInWithEmailAndPassword(email, password)\r\n                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {\r\n                    @Override\r\n                    public void onComplete(@NonNull Task<AuthResult> task) {\r\n                        if (task.isSuccessful()) {\r\n                            FirebaseUser user = mAuth.getCurrentUser();\r\n                            goToMain();\r\n                        } else {\r\n                            Toast.makeText(login.this, \"Login failed.\",\r\n                                    Toast.LENGTH_SHORT).show();\r\n                        }\r\n                    }\r\n                });\r\n    }\r\n\r\n    @Override\r\n    protected void onStart() {\r\n        super.onStart();\r\n        FirebaseUser currentUser = mAuth.getCurrentUser();\r\n        if(currentUser != null){\r\n            Toast.makeText(login.this, \"Already logged in.\",\r\n                    Toast.LENGTH_SHORT).show();\r\n            goToMain();\r\n        }\r\n    }\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login);\r\n        mAuth = FirebaseAuth.getInstance();\r\n\r\n        Button btnLogin = findViewById(R.id.buttonLogin);\r\n        btnLogin.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                login();\r\n            }\r\n        });\r\n\r\n        TextView linkRegister = (TextView) findViewById(R.id.linkRegister);\r\n        linkRegister.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                goToRegister();\r\n            }\r\n        });\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/geomemories/login.java b/app/src/main/java/com/example/geomemories/login.java
+--- a/app/src/main/java/com/example/geomemories/login.java	(revision 64e3d887214e52c8eb7ca6821e03d065b084cc36)
++++ b/app/src/main/java/com/example/geomemories/login.java	(date 1673862175207)
+@@ -17,7 +17,7 @@
+ import com.google.firebase.auth.FirebaseAuth;
+ import com.google.firebase.auth.FirebaseUser;
+ 
+-public class login extends AppCompatActivity {
++public class zlogin extends AppCompatActivity {
+ 
+     private FirebaseAuth mAuth;
+ 
+Index: app/src/main/res/layout/fragment_photo.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_photo.xml b/app/src/main/res/layout/fragment_photo.xml
+new file mode 100644
+--- /dev/null	(date 1674487508478)
++++ b/app/src/main/res/layout/fragment_photo.xml	(date 1674487508478)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".PhotoFragment">
++
++    <!-- TODO: Update blank fragment layout -->
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="@string/Photo" />
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/geomemories/PhotoFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/geomemories/PhotoFragment.java b/app/src/main/java/com/example/geomemories/PhotoFragment.java
+new file mode 100644
+--- /dev/null	(date 1674487110314)
++++ b/app/src/main/java/com/example/geomemories/PhotoFragment.java	(date 1674487110314)
+@@ -0,0 +1,64 @@
++package com.example.geomemories;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++/**
++ * A simple {@link Fragment} subclass.
++ * Use the {@link PhotoFragment#newInstance} factory method to
++ * create an instance of this fragment.
++ */
++public class PhotoFragment extends Fragment {
++
++    // TODO: Rename parameter arguments, choose names that match
++    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++    private static final String ARG_PARAM1 = "param1";
++    private static final String ARG_PARAM2 = "param2";
++
++    // TODO: Rename and change types of parameters
++    private String mParam1;
++    private String mParam2;
++
++    public PhotoFragment() {
++        // Required empty public constructor
++    }
++
++    /**
++     * Use this factory method to create a new instance of
++     * this fragment using the provided parameters.
++     *
++     * @param param1 Parameter 1.
++     * @param param2 Parameter 2.
++     * @return A new instance of fragment PhotoFragment.
++     */
++    // TODO: Rename and change types and number of parameters
++    public static PhotoFragment newInstance(String param1, String param2) {
++        PhotoFragment fragment = new PhotoFragment();
++        Bundle args = new Bundle();
++        args.putString(ARG_PARAM1, param1);
++        args.putString(ARG_PARAM2, param2);
++        fragment.setArguments(args);
++        return fragment;
++    }
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        if (getArguments() != null) {
++            mParam1 = getArguments().getString(ARG_PARAM1);
++            mParam2 = getArguments().getString(ARG_PARAM2);
++        }
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_photo, container, false);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_account.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_account.xml b/app/src/main/res/layout/fragment_account.xml
+new file mode 100644
+--- /dev/null	(date 1674487508451)
++++ b/app/src/main/res/layout/fragment_account.xml	(date 1674487508451)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".AccountFragment">
++
++    <!-- TODO: Update blank fragment layout -->
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="@string/Account" />
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/geomemories/AccountFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/geomemories/AccountFragment.java b/app/src/main/java/com/example/geomemories/AccountFragment.java
+new file mode 100644
+--- /dev/null	(date 1674487087080)
++++ b/app/src/main/java/com/example/geomemories/AccountFragment.java	(date 1674487087080)
+@@ -0,0 +1,64 @@
++package com.example.geomemories;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++/**
++ * A simple {@link Fragment} subclass.
++ * Use the {@link AccountFragment#newInstance} factory method to
++ * create an instance of this fragment.
++ */
++public class AccountFragment extends Fragment {
++
++    // TODO: Rename parameter arguments, choose names that match
++    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++    private static final String ARG_PARAM1 = "param1";
++    private static final String ARG_PARAM2 = "param2";
++
++    // TODO: Rename and change types of parameters
++    private String mParam1;
++    private String mParam2;
++
++    public AccountFragment() {
++        // Required empty public constructor
++    }
++
++    /**
++     * Use this factory method to create a new instance of
++     * this fragment using the provided parameters.
++     *
++     * @param param1 Parameter 1.
++     * @param param2 Parameter 2.
++     * @return A new instance of fragment AccountFragment.
++     */
++    // TODO: Rename and change types and number of parameters
++    public static AccountFragment newInstance(String param1, String param2) {
++        AccountFragment fragment = new AccountFragment();
++        Bundle args = new Bundle();
++        args.putString(ARG_PARAM1, param1);
++        args.putString(ARG_PARAM2, param2);
++        fragment.setArguments(args);
++        return fragment;
++    }
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        if (getArguments() != null) {
++            mParam1 = getArguments().getString(ARG_PARAM1);
++            mParam2 = getArguments().getString(ARG_PARAM2);
++        }
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_account, container, false);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_settings.xml b/app/src/main/res/layout/fragment_settings.xml
+new file mode 100644
+--- /dev/null	(date 1674487508500)
++++ b/app/src/main/res/layout/fragment_settings.xml	(date 1674487508500)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".SettingsFragment">
++
++    <!-- TODO: Update blank fragment layout -->
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="@string/Setting" />
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/geomemories/SettingsFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/geomemories/SettingsFragment.java b/app/src/main/java/com/example/geomemories/SettingsFragment.java
+new file mode 100644
+--- /dev/null	(date 1674487130503)
++++ b/app/src/main/java/com/example/geomemories/SettingsFragment.java	(date 1674487130503)
+@@ -0,0 +1,64 @@
++package com.example.geomemories;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++/**
++ * A simple {@link Fragment} subclass.
++ * Use the {@link SettingsFragment#newInstance} factory method to
++ * create an instance of this fragment.
++ */
++public class SettingsFragment extends Fragment {
++
++    // TODO: Rename parameter arguments, choose names that match
++    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++    private static final String ARG_PARAM1 = "param1";
++    private static final String ARG_PARAM2 = "param2";
++
++    // TODO: Rename and change types of parameters
++    private String mParam1;
++    private String mParam2;
++
++    public SettingsFragment() {
++        // Required empty public constructor
++    }
++
++    /**
++     * Use this factory method to create a new instance of
++     * this fragment using the provided parameters.
++     *
++     * @param param1 Parameter 1.
++     * @param param2 Parameter 2.
++     * @return A new instance of fragment SettingsFragment.
++     */
++    // TODO: Rename and change types and number of parameters
++    public static SettingsFragment newInstance(String param1, String param2) {
++        SettingsFragment fragment = new SettingsFragment();
++        Bundle args = new Bundle();
++        args.putString(ARG_PARAM1, param1);
++        args.putString(ARG_PARAM2, param2);
++        fragment.setArguments(args);
++        return fragment;
++    }
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        if (getArguments() != null) {
++            mParam1 = getArguments().getString(ARG_PARAM1);
++            mParam2 = getArguments().getString(ARG_PARAM2);
++        }
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_settings, container, false);
++    }
++}
+\ No newline at end of file
