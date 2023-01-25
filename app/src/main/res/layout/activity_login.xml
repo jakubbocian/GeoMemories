@@ -73,7 +73,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="108dp" />
+        tools:layout_editor_absoluteY="135dp" />
 
     <ImageButton
         android:id="@+id/imageButton"
