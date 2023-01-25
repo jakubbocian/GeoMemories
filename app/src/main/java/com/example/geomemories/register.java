@@ -54,13 +54,11 @@ public class register extends AppCompatActivity {
                             registred = true;
                             String uid = user.getUid();
                             database = FirebaseDatabase.getInstance();
-                            DatabaseReference myRef = database.getReference("message");
-                            myRef.setValue("Hello, World!");
+                            DatabaseReference myRef = database.getReference(uid);
+                            myRef.child("name").setValue(((EditText) findViewById(R.id.inputName)).getText().toString());
+                            myRef.child("surname").setValue(((EditText) findViewById(R.id.inputSurname)).getText().toString());
+                            myRef.child("username").setValue(((EditText) findViewById(R.id.inputUsername)).getText().toString());
 
-                            /*User userToDb = new User(((EditText) findViewById(R.id.inputName)).getText().toString(), ((EditText) findViewById(R.id.inputSurname)).getText().toString());
-                            mDatabase.child("users").child(uid).setValue(userToDb).addOnSuccessListener(aVoid -> {
-                                Log.d("TAG", "onSuccess: user Profile is created for " + uid);
-                            });*/
                             goToLogin();
                         } else {
                             Toast.makeText(register.this, "Registration failed.",
