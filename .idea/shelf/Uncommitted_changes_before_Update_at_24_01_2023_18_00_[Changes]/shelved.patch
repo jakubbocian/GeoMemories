@@ -1,0 +1,192 @@
+Index: app/src/main/res/layout/activity_mappa.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n\r\n<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:map=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:name=\"com.google.android.gms.maps.SupportMapFragment\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n    <fragment xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n        xmlns:map=\"http://schemas.android.com/apk/res-auto\"\r\n        xmlns:tools=\"http://schemas.android.com/tools\"\r\n        android:id=\"@+id/map\"\r\n        android:name=\"com.google.android.gms.maps.SupportMapFragment\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        tools:context=\".mappa\" />\r\n\r\n\r\n    <com.google.android.material.floatingactionbutton.FloatingActionButton\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:id=\"@+id/photo\"\r\n        map:maxImageSize=\"40dp\"\r\n        android:backgroundTint=\"@color/yellow\"\r\n        map:layout_anchor=\"@id/bottom_app_bar\"\r\n        android:src=\"@drawable/ic_baseline_add_24\"\r\n    />\r\n\r\n    <com.google.android.material.bottomappbar.BottomAppBar\r\n        android:id=\"@+id/bottom_app_bar\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_gravity=\"bottom\"\r\n        map:backgroundTint=\"@color/white\"\r\n        style=\"@style/Widget.MaterialComponents.BottomNavigationView.Colored\"\r\n        map:fabCradleMargin=\"6dp\"\r\n        map:fabAlignmentMode=\"center\"\r\n        map:fabCradleRoundedCornerRadius=\"80dp\"\r\n\r\n    >\r\n\r\n        <com.ismaeldivita.chipnavigation.ChipNavigationBar\r\n            android:id=\"@+id/chip_app_bar\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginEnd=\"16dp\"\r\n            android:background=\"@android:color/transparent\"\r\n            android:paddingTop=\"8dp\"\r\n            android:paddingBottom=\"8dp\"\r\n            map:cnb_iconSize=\"30dp\"\r\n            map:cnb_menuResource=\"@menu/navigation_menu_with_botton\"\r\n            map:cnb_radius=\"28dp\"\r\n            map:cnb_unselectedColor=\"@color/black\"\r\n            />\r\n    </com.google.android.material.bottomappbar.BottomAppBar>\r\n</androidx.coordinatorlayout.widget.CoordinatorLayout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_mappa.xml b/app/src/main/res/layout/activity_mappa.xml
+--- a/app/src/main/res/layout/activity_mappa.xml	(revision 103b1d1ffc67839166633894f05d1ec68709093e)
++++ b/app/src/main/res/layout/activity_mappa.xml	(date 1674579007202)
+@@ -7,16 +7,14 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+ 
+-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+-        xmlns:map="http://schemas.android.com/apk/res-auto"
+-        xmlns:tools="http://schemas.android.com/tools"
++
++    <fragment
+         android:id="@+id/map"
+         android:name="com.google.android.gms.maps.SupportMapFragment"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         tools:context=".mappa" />
+ 
+-
+     <com.google.android.material.floatingactionbutton.FloatingActionButton
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+Index: app/src/main/java/com/example/geomemories/login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.geomemories;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.firebase.auth.AuthResult;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\n\r\npublic class login extends AppCompatActivity {\r\n\r\n    private FirebaseAuth mAuth;\r\n\r\n    public void goToRegister() {\r\n        Intent intent = new Intent(getApplicationContext(), register.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void goToMain() {\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void login(){\r\n        String email = ((EditText) findViewById(R.id.inputEmail)).getText().toString();\r\n        String password = ((EditText) findViewById(R.id.inputPass)).getText().toString();\r\n\r\n        mAuth.signInWithEmailAndPassword(email, password)\r\n                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {\r\n                    @Override\r\n                    public void onComplete(@NonNull Task<AuthResult> task) {\r\n                        if (task.isSuccessful()) {\r\n                            FirebaseUser user = mAuth.getCurrentUser();\r\n                            goToMain();\r\n                        } else {\r\n                            Toast.makeText(login.this, \"Login failed.\",\r\n                                    Toast.LENGTH_SHORT).show();\r\n                        }\r\n                    }\r\n                });\r\n    }\r\n\r\n    @Override\r\n    protected void onStart() {\r\n        super.onStart();\r\n        FirebaseUser currentUser = mAuth.getCurrentUser();\r\n        if(currentUser != null){\r\n            Toast.makeText(login.this, \"Already logged in.\",\r\n                    Toast.LENGTH_SHORT).show();\r\n            goToMain();\r\n        }\r\n    }\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login);\r\n        mAuth = FirebaseAuth.getInstance();\r\n\r\n        Button btnLogin = findViewById(R.id.buttonLogin);\r\n        btnLogin.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                login();\r\n            }\r\n        });\r\n\r\n        TextView linkRegister = (TextView) findViewById(R.id.linkLogin);\r\n        linkRegister.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                goToRegister();\r\n            }\r\n        });\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/geomemories/login.java b/app/src/main/java/com/example/geomemories/login.java
+--- a/app/src/main/java/com/example/geomemories/login.java	(revision 103b1d1ffc67839166633894f05d1ec68709093e)
++++ b/app/src/main/java/com/example/geomemories/login.java	(date 1674575464711)
+@@ -17,7 +17,7 @@
+ import com.google.firebase.auth.FirebaseAuth;
+ import com.google.firebase.auth.FirebaseUser;
+ 
+-public class login extends AppCompatActivity {
++public class zlogin extends AppCompatActivity {
+ 
+     private FirebaseAuth mAuth;
+ 
+Index: app/src/main/java/com/example/geomemories/fragment/settings_fragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/geomemories/fragment/settings_fragment.kt b/app/src/main/java/com/example/geomemories/fragment/settings_fragment.kt
+new file mode 100644
+--- /dev/null	(date 1674579109900)
++++ b/app/src/main/java/com/example/geomemories/fragment/settings_fragment.kt	(date 1674579109900)
+@@ -0,0 +1,19 @@
++package com.example.geomemories.fragment
++
++import android.os.Bundle
++import androidx.fragment.app.Fragment
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import com.example.geomemories.R
++
++
++class settings_fragment : Fragment() {
++
++    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
++                              savedInstanceState: Bundle?): View? {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.settings_fragment, container, false)
++    }
++
++}
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n    id 'com.google.gms.google-services'\r\n    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'\r\n}\r\n\r\nandroid {\r\n    namespace 'com.example.geomemories'\r\n    compileSdk 32\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.geomemories\"\r\n        minSdk 23\r\n        targetSdk 32\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n    buildFeatures {\r\n        viewBinding true\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.appcompat:appcompat:1.5.1'\r\n    implementation 'com.google.android.material:material:1.7.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\r\n    implementation 'com.google.firebase:firebase-firestore:24.4.1'\r\n    implementation 'com.google.firebase:firebase-auth:21.1.0'\r\n    implementation 'com.google.android.gms:play-services-maps:18.1.0'\r\n    implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'\r\n    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.31'\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.4'\r\n    implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'\r\n    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.31'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'\r\n\r\n\r\n    implementation platform('com.google.firebase:firebase-bom:31.2.0')\r\n    implementation 'com.google.firebase:firebase-database'\r\n\r\n    implementation 'com.google.firebase:firebase-analytics'\r\n    implementation 'com.google.firebase:firebase-auth'\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 103b1d1ffc67839166633894f05d1ec68709093e)
++++ b/app/build.gradle	(date 1674578466912)
+@@ -2,6 +2,7 @@
+     id 'com.android.application'
+     id 'com.google.gms.google-services'
+     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
++    id 'org.jetbrains.kotlin.android'
+ }
+ 
+ android {
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>buildscript {\r\n  dependencies {\r\n    classpath 'com.google.gms:google-services:4.3.15'\r\n  }\r\n}// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\nplugins {\r\n  id 'com.android.application' version '7.3.1' apply false\r\n  id 'com.android.library' version '7.3.1' apply false\r\n    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 103b1d1ffc67839166633894f05d1ec68709093e)
++++ b/build.gradle	(date 1674578466862)
+@@ -7,5 +7,6 @@
+   id 'com.android.application' version '7.3.1' apply false
+   id 'com.android.library' version '7.3.1' apply false
+     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
++  id 'org.jetbrains.kotlin.android' version '1.7.21' apply false
+ }
+ 
+Index: app/src/main/java/com/example/geomemories/fragment/profile_fragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/geomemories/fragment/profile_fragment.kt b/app/src/main/java/com/example/geomemories/fragment/profile_fragment.kt
+new file mode 100644
+--- /dev/null	(date 1674579007213)
++++ b/app/src/main/java/com/example/geomemories/fragment/profile_fragment.kt	(date 1674579007213)
+@@ -0,0 +1,18 @@
++package com.example.geomemories.fragment
++
++import android.os.Bundle
++import androidx.fragment.app.Fragment
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import com.example.geomemories.R
++
++class profile_fragment : Fragment() {
++
++
++    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
++                              savedInstanceState: Bundle?): View? {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.profile_fragment, container, false)
++    }
++}
+Index: app/src/main/res/layout/settings_fragment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/settings_fragment.xml b/app/src/main/res/layout/settings_fragment.xml
+new file mode 100644
+--- /dev/null	(date 1674579079047)
++++ b/app/src/main/res/layout/settings_fragment.xml	(date 1674579079047)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".fragment.settings_fragment">
++
++    <!-- TODO: Update blank fragment layout -->
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="@string/hello_blank_fragment" />
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/profile_fragment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/profile_fragment.xml b/app/src/main/res/layout/profile_fragment.xml
+new file mode 100644
+--- /dev/null	(date 1674579545751)
++++ b/app/src/main/res/layout/profile_fragment.xml	(date 1674579545751)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".fragment.profile_fragment">
++
++    <!-- TODO: Update blank fragment layout -->
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++         />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
