@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -32,7 +33,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.geomemories.databinding.ActivityMappaBinding;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -40,6 +43,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
@@ -68,8 +72,9 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
     private LocationManager mLocationManager;
     private LocationRequest mLocationRequest;
 
+    public Posizione posizione;
 
-    private void openCamera(){
+    private void openCamera() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
@@ -90,7 +95,7 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
 
     private void takePicture() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.CAMERA }, REQUEST_CAMERA_PERMISSION);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
         } else {
             // Permission has already been granted
             openCamera();
@@ -98,29 +103,27 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
-    private void marker(){
+
+    private void getLocation(final LocationCallback callback) {
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener(new OnSuccessListener<Location>() {
                     @Override
                     public void onSuccess(Location location) {
                         if (location != null) {
-                            double latitude = location.getLatitude();
-                            double longitude = location.getLongitude();
-                            LatLng latLng = new LatLng(latitude, longitude);
-                            mMap.addMarker(new MarkerOptions().position(latLng).title("Current Location"));
-                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+                            posizione = new Posizione(location);
+                            callback.onLocationRetrieved(new Posizione(location));
                         }
                     }
                 });
     }
 
-    private void addMarker(){
+    private void addMarker() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // Request location permission
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERMISSION);
         } else {
+
             // Permission has already been granted
-            marker();
         }
     }
 
@@ -130,25 +133,33 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             FirebaseStorage storage = FirebaseStorage.getInstance();
-            StorageReference storageRef = storage.getReference(mAuth.getUid()).child("prova.jpg");
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-            byte[] dataToUpload = baos.toByteArray();
-            UploadTask uploadTask = storageRef.putBytes(dataToUpload);
-            uploadTask.addOnFailureListener(new OnFailureListener() {
+            getLocation(new LocationCallback() {
                 @Override
-                public void onFailure(@NonNull Exception exception) {
-                    // Handle unsuccessful uploads
-                }
-            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    addMarker();
-                    Toast.makeText(mappa.this, "Foto caricata con successo", Toast.LENGTH_SHORT).show();
+                public void onLocationRetrieved(Posizione posizione) {
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+                    Date currentDate = new Date();
+                    StorageReference storageRef = storage.getReference(mAuth.getUid()).child(posizione.format() + ";" + sdf.format(currentDate) + ".jpg");
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                    byte[] dataToUpload = baos.toByteArray();
+                    UploadTask uploadTask = storageRef.putBytes(dataToUpload);
+                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle unsuccessful uploads
+                        }
+                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            createMarkers();
+                        }
+                    });
                 }
             });
+
+
             // Do something with the image, such as displaying it on an ImageView
-            String savedImageURL = MediaStore.Images.Media.insertImage(getContentResolver(), imageBitmap, "title", "description");
+            //String savedImageURL = MediaStore.Images.Media.insertImage(getContentResolver(), imageBitmap, "title", "description");
         }
     }
 
@@ -160,7 +171,10 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         /**/
 
-
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // Request location permission
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERMISSION);
+        }
 
 
         binding = ActivityMappaBinding.inflate(getLayoutInflater());
@@ -183,14 +197,64 @@ public class mappa extends FragmentActivity implements OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+    private void createMarkers(){
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference userRef = storage.getReference(mAuth.getUid());
+        userRef.listAll()
+                .addOnSuccessListener(new OnSuccessListener<ListResult>() {
+                    @Override
+                    public void onSuccess(ListResult listResult) {
+                        for (StorageReference prefix : listResult.getPrefixes()) {
+
+                        }
+
+                        for (StorageReference item : listResult.getItems()) {
+                            String[] parts = item.getName().split(";");
+                            double lat = Double.parseDouble(parts[0]);
+                            double lon = Double.parseDouble(parts[1]);
+                            String date = parts[2].split(".jpg")[0];
+                            LatLng latLng = new LatLng(lat, lon);
+                            StorageReference icon = userRef.child(item.getName());
+                            icon.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                                @Override
+                                public void onSuccess(byte[] bytes) {
+                                    Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+
+
+
+                                    Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(date).icon(BitmapDescriptorFactory.fromBitmap(bitmap)));
+                                    mMap.setOnMarkerClickListener(
+                                            new GoogleMap.OnMarkerClickListener() {
+                                                @Override
+                                                public boolean onMarkerClick(Marker marker) {
+                                                    DialogMarker dialogMarker = new DialogMarker();
+                                                    dialogMarker.setMarker(marker);
+                                                    dialogMarker.show(getSupportFragmentManager(), "dialogMarker");
+                                                    createMarkers();
+                                                    return false;
+                                                }
+                                            }
+                                    );
+                                }
+                            });
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Uh-oh, an error occurred!
+                    }
+                });
+    }
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        createMarkers();
 
         FloatingActionButton photoButton = findViewById(R.id.photo);
         photoButton.setOnClickListener(new View.OnClickListener() {
