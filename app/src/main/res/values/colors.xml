@@ -8,6 +8,14 @@
     <color name="white">#FFFFFFFF</color>
 
 
+    <color name="primary">#1B023B</color>
+    <color name="secondary">#FF03DAC5</color>
+
+    <color name="night_mode">#6124B1</color>
+    <color name="notification">#13B2C3</color>
+    <color name="private_account">#E6A326</color>
+    <color name="security">#D95F69</color>
+
     <color name="black">#1E1F20</color>
     <color name="dark_blue">#2c93ab</color>
     <color name="purple">#5b3db7</color>
